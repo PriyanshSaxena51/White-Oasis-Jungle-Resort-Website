@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login / Join - White Oasis Jungle Resort</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">WHITE OASIS JUNGLE RESORT</a>
+            </div>
+
+            <!-- Menu Links -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="cafe.html">Cafeteria</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right Side -->
+            <div class="nav-right">
+                <a href="login.html" class="login">Login / Join</a>
+                <a href="booking.html" class="book-btn">Book A Stay</a>
+            </div>
+
+        </div>
+    </header>
+    <section class="auth-section">
+
+        <div class="auth-container">
+
+            <div class="auth-buttons">
+                <button onclick="showLogin()">Login</button>
+                <button onclick="showJoin()">Join</button>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <div id="loginForm" class="auth-form">
+                <h2>Login</h2>
+                <input type="text" id="loginUser" placeholder="Email or Mobile Number">
+                <input type="password" id="loginPass" placeholder="Password">
+                <button onclick="loginUser()">Login</button>
+            </div>
+
+            <!-- JOIN FORM -->
+            <div id="joinForm" class="auth-form" style="display:none;">
+                <h2>Join Now</h2>
+                <input type="text" id="joinEmail" placeholder="Email">
+                <input type="text" id="joinMobile" placeholder="Mobile Number">
+                <input type="password" id="joinPass" placeholder="Create Password">
+                <button onclick="registerUser()">Create Account</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        function showLogin() {
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("joinForm").style.display = "none";
+        }
+
+        function showJoin() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("joinForm").style.display = "block";
+        }
+
+        function registerUser() {
+            let email = document.getElementById("joinEmail").value;
+            let mobile = document.getElementById("joinMobile").value;
+            let pass = document.getElementById("joinPass").value;
+
+            if (email === "" || mobile === "" || pass === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            let user = {
+                email: email,
+                mobile: mobile,
+                password: pass
+            };
+
+            localStorage.setItem("user", JSON.stringify(user));
+            alert("Account Created Successfully!");
+            showLogin();
+        }
+
+        function loginUser() {
+            let loginInput = document.getElementById("loginUser").value;
+            let loginPass = document.getElementById("loginPass").value;
+
+            let storedUser = JSON.parse(localStorage.getItem("user"));
+
+            if (storedUser &&
+                (loginInput === storedUser.email || loginInput === storedUser.mobile) &&
+                loginPass === storedUser.password) {
+                alert("Login Successful!");
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid Details!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

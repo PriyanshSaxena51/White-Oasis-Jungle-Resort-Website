@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Your Stay | White Oasis Jungle Resort</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="booking-page">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <a href="index.html">
+                    White Oasis
+                    <span>JUNGLE RESORT</span>
+                </a>
+
+            </div>
+
+            <!-- NAV LINKS -->
+
+            <nav>
+
+                <ul class="nav-links">
+
+                    <li><a href="index.html">HOME</a></li>
+
+                    <li><a href="rooms.html">ROOMS</a></li>
+
+                    <li><a href="gallery.html">GALLERY</a></li>
+
+                    <li><a href="booking.html">BOOKING</a></li>
+
+                    <li><a href="cafe.html">CAFETERIA</a></li>
+
+                    <li><a href="reviews.html">REVIEWS</a></li>
+
+                </ul>
+
+            </nav>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="nav-right">
+
+                <a href="login.html" class="login">
+                    LOGIN
+                </a>
+
+                <a href="booking.html" class="book-btn">
+                    BOOK NOW
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="booking-hero">
+
+        <div class="booking-overlay"></div>
+
+        <div class="booking-wrapper">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="booking-left">
+
+                <h3>
+                    Luxury Jungle Retreat
+                </h3>
+
+                <h1>
+                    Book Your <br>
+                    Dream Stay
+                </h1>
+
+                <p>
+                    Experience luxury, nature and comfort together
+                    at White Oasis Jungle Resort.
+                </p>
+
+                <div class="booking-features">
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Luxury Pool Rooms
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Peaceful Jungle Views
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Premium Hospitality
+                    </div>
+
+                    <div class="feature-item">
+                        <span>✓</span>
+                        Swimming Pool & Restaurant
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BOOKING CARD -->
+
+            <div class="booking-card-modern">
+
+                <h2>
+                    Reserve Your Stay
+                </h2>
+
+                <p class="booking-subtitle">
+                    Fill the details below to confirm your booking
+                </p>
+
+                <form id="bookingForm" class="booking-form">
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- DATES -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                Check In
+                            </label>
+
+                            <input
+                                type="date"
+                                id="checkin"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                Check Out
+                            </label>
+
+                            <input
+                                type="date"
+                                id="checkout"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <!-- GUESTS -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Guests
+                        </label>
+
+                        <select id="guests">
+
+                            <option>
+                                1 Guest
+                            </option>
+
+                            <option>
+                                2 Guests
+                            </option>
+
+                            <option>
+                                3 Guests
+                            </option>
+
+                            <option>
+                                4 Guests
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- ROOM TYPE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Room Type
+                        </label>
+
+                        <select id="room" required>
+
+                            <option>
+                                Luxury Pool Room
+                            </option>
+
+                            <option>
+                                Deluxe Jungle View
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- SPECIAL REQUEST -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Special Request
+                        </label>
+
+                        <textarea
+                            placeholder="Write your special request here..."
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="button"
+                        onclick="sendRoomBooking()"
+                        class="book-btn-modern"
+                    >
+
+                        CONFIRM BOOKING
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+
+    <section class="cta">
+
+        <h2>
+            Escape Into Luxury & Nature
+        </h2>
+
+        <p>
+            Reserve your unforgettable experience today.
+        </p>
+
+        <a href="gallery.html" class="hero-btn">
+            EXPLORE GALLERY
+        </a>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="main-footer">
+
+        <div class="footer-container">
+
+            <!-- COLUMN 1 -->
+
+            <div class="footer-column">
+
+                <h2 class="footer-logo">
+                    White Oasis Resort
+                </h2>
+
+                <p>
+                    Luxury jungle resort experience with premium rooms,
+                    nature vibes and unforgettable memories.
+                </p>
+
+            </div>
+
+            <!-- COLUMN 2 -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="rooms.html">Rooms</a></li>
+
+                    <li><a href="gallery.html">Gallery</a></li>
+
+                    <li><a href="booking.html">Booking</a></li>
+
+                    <li><a href="cafe.html">Cafeteria</a></li>
+
+                    <li><a href="reviews.html">Reviews</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- COLUMN 3 -->
+
+            <div class="footer-column">
+
+                <h3>Contact Information</h3>
+
+                <p>
+                    +91 8287468765
+                </p>
+
+                <p>
+                    info@whiteoasisresort.com
+                </p>
+
+                <p>
+                    Pilibhit Tiger Reserve Road,
+                    Uttar Pradesh, India
+                </p>
+
+            </div>
+
+            <!-- COLUMN 4 -->
+
+            <div class="footer-column">
+
+                <h3>Follow Us</h3>
+
+                <p>
+                    Stay connected for offers and updates.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        Facebook
+                    </a>
+
+                    <a href="#">
+                        Instagram
+                    </a>
+
+                    <a href="#">
+                        YouTube
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 White Oasis Jungle Resort | All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

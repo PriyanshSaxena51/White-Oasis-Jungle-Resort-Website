@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews - White Oasis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header> ...same navbar... </header>
+
+<section class="section">
+    <h2>Guest Reviews</h2>
+
+    <div class="review-form">
+        <input type="text" id="name" placeholder="Your Name">
+        <textarea id="message" placeholder="Write Review"></textarea>
+        <button onclick="addReview()" class="btn">Submit</button>
+    </div>
+
+    <div id="review-list"></div>
+</section>
+
+<script>
+function addReview() {
+    var name = document.getElementById("name").value;
+    var message = document.getElementById("message").value;
+
+    if(name && message) {
+        var review = document.createElement("div");
+        review.className = "review-box";
+        review.innerHTML = "<h4>" + name + "</h4><p>" + message + "</p>";
+        document.getElementById("review-list").appendChild(review);
+    }
+}
+</script>
+
+<footer>
+    <p>© 2026 White Oasis Resort</p>
+</footer>
+
+</body>
+</html>
