@@ -1,26 +1,41 @@
-document.getElementById("reserveForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+console.log("SCRIPT LOADED");
 
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var date = document.getElementById("date").value;
-    var time = document.getElementById("time").value;
-    var guests = document.getElementById("guests").value;
+/* ================= CAFE TABLE BOOKING ================= */
 
-    var whatsappNumber = "918287468765"; // Replace with your WhatsApp number
+const reserveForm = document.getElementById("reserveForm");
 
-    var message =
-        "New Table Reservation:%0A" +
-        "Name: " + name + "%0A" +
-        "Email: " + email + "%0A" +
-        "Date: " + date + "%0A" +
-        "Time: " + time + "%0A" +
-        "Guests: " + guests;
+if (reserveForm) {
 
-    var whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + message;
+    reserveForm.addEventListener("submit", function (e) {
 
-    window.open(whatsappURL, "_blank");
-});
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+        let guests = document.getElementById("guests").value;
+
+        let whatsappNumber = "918287468765";
+
+        let message =
+            "New Table Reservation:%0A" +
+            "Name: " + name + "%0A" +
+            "Email: " + email + "%0A" +
+            "Date: " + date + "%0A" +
+            "Time: " + time + "%0A" +
+            "Guests: " + guests;
+
+        let whatsappURL =
+            "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+}
+
+/* ================= ROOM BOOKING ================= */
 
 function sendRoomBooking() {
 
@@ -32,8 +47,10 @@ function sendRoomBooking() {
     let room = document.getElementById("room").value;
 
     if (!name || !phone || !checkin || !checkout) {
+
         alert("Please fill all fields");
         return;
+
     }
 
     let message = `🏨 White Oasis Resort Room Booking
@@ -45,7 +62,39 @@ Check-out: ${checkout}
 Guests: ${guests}
 Room: ${room}`;
 
-    let url = `https://wa.me/918287468765?text=${encodeURIComponent(message)}`;
+    let url =
+        `https://wa.me/918287468765?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
+
 }
+
+/* ================= DISABLE PAST DATES ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const today = new Date().toISOString().split("T")[0];
+
+    const checkin = document.getElementById("checkin");
+    const checkout = document.getElementById("checkout");
+
+    if (checkin && checkout) {
+
+        checkin.min = today;
+        checkout.min = today;
+
+        checkin.addEventListener("change", function () {
+
+            checkout.min = this.value;
+
+            if (checkout.value && checkout.value <= this.value) {
+
+                checkout.value = "";
+
+            }
+
+        });
+
+    }
+
+});

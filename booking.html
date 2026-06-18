@@ -17,7 +17,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
 </head>
@@ -32,15 +33,22 @@
 
             <!-- LOGO -->
 
+            <!-- LOGO -->
+
             <div class="logo">
 
-                <a href="index.html">
-                    White Oasis
-                    <span>JUNGLE RESORT</span>
+                <a href="index.html" class="logo-wrapper">
+
+                    <img src="assets/images/logo.white-oasis.png" alt="White Oasis Logo" class="logo-circle">
+
+                    <div class="logo-text">
+                        White Oasis
+                        <span>JUNGLE RESORT</span>
+                    </div>
+
                 </a>
 
             </div>
-
             <!-- NAV LINKS -->
 
             <nav>
@@ -49,15 +57,19 @@
 
                     <li><a href="index.html">HOME</a></li>
 
+                    <li><a href="index.html#about">ABOUT</a></li>
+
+                    <li><a href="cafe.html">DINING</a></li>
+
                     <li><a href="rooms.html">ROOMS</a></li>
+
+                    <li><a href="index.html#amenities">AMENITIES</a></li>
 
                     <li><a href="gallery.html">GALLERY</a></li>
 
-                    <li><a href="booking.html">BOOKING</a></li>
+                    <li><a href="index.html#owner">OWNER</a></li>
 
-                    <li><a href="cafe.html">CAFETERIA</a></li>
-
-                    <li><a href="reviews.html">REVIEWS</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
 
                 </ul>
 
@@ -66,10 +78,6 @@
             <!-- RIGHT SIDE -->
 
             <div class="nav-right">
-
-                <a href="login.html" class="login">
-                    LOGIN
-                </a>
 
                 <a href="booking.html" class="book-btn">
                     BOOK NOW
@@ -129,6 +137,11 @@
                         Swimming Pool & Restaurant
                     </div>
 
+                    <div class="feature-item">
+                        <span>✓</span>
+                        24/7 Service
+                    </div>
+
                 </div>
 
             </div>
@@ -155,12 +168,7 @@
                             Full Name
                         </label>
 
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Enter your full name"
-                            required
-                        >
+                        <input type="text" id="name" placeholder="Enter your full name" required>
 
                     </div>
 
@@ -172,12 +180,7 @@
                             Phone Number
                         </label>
 
-                        <input
-                            type="tel"
-                            id="phone"
-                            placeholder="Enter your phone number"
-                            required
-                        >
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
 
                     </div>
 
@@ -191,11 +194,7 @@
                                 Check In
                             </label>
 
-                            <input
-                                type="date"
-                                id="checkin"
-                                required
-                            >
+                            <input type="date" id="checkin" required>
 
                         </div>
 
@@ -205,11 +204,7 @@
                                 Check Out
                             </label>
 
-                            <input
-                                type="date"
-                                id="checkout"
-                                required
-                            >
+                            <input type="date" id="checkout" required>
 
                         </div>
 
@@ -275,20 +270,13 @@
                             Special Request
                         </label>
 
-                        <textarea
-                            placeholder="Write your special request here..."
-                            rows="4"
-                        ></textarea>
+                        <textarea placeholder="Write your special request here..." rows="4"></textarea>
 
                     </div>
 
                     <!-- BUTTON -->
 
-                    <button
-                        type="button"
-                        onclick="sendRoomBooking()"
-                        class="book-btn-modern"
-                    >
+                    <button type="button" onclick="sendRoomBooking()" class="book-btn-modern">
 
                         CONFIRM BOOKING
 
@@ -404,10 +392,6 @@
 
                     <a href="#">
                         Instagram
-                    </a>
-
-                    <a href="#">
-                        YouTube
                     </a>
 
                 </div>
